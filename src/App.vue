@@ -1,3 +1,5 @@
 <template>
-    <div>App component</div>
+    <div>
+        <RouterView />
+    </div>
 </template>
