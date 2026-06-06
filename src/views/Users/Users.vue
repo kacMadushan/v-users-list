@@ -1,5 +1,6 @@
 <template>
     <div>
+        <RouterLink to="/create">Create New</RouterLink>
         <h1>Users</h1>
         <UserList :users="users"/>
     </div>
