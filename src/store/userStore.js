@@ -45,6 +45,19 @@ export const useUserStore = defineStore("user", {
     actions: {
         addNewUser(user) {
             this.users.push(user)
+        },
+
+        editUserItem(id, user) {
+            this.users = this.users.map((item) => {
+                if(item.id === id) {
+                    return {
+                        ...item,
+                        ...user
+                    }
+                } else {
+                    return item
+                }
+            })
         }
     }
 })
