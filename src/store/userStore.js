@@ -37,6 +37,10 @@ export const useUserStore = defineStore("user", {
             }
         ]
     }),
-    getters: {},
+    getters: {
+        getUserById: (state) => {
+            return (profileId) => state.users.find((user) => user.id === profileId)
+        }
+    },
     actions: {}
 })
