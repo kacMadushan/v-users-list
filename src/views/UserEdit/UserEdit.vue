@@ -1,12 +1,13 @@
 <template>
     <div>
+        <RouterLink to="/">Back</RouterLink>
         <h1>User edit</h1>
-        <UserForm :user="user"/>
+        <UserForm :user="user" @edit-user="editUserItem"/>
     </div>
 </template>
 
 <script lang="js">
-import { mapState } from "pinia"
+import { mapState, mapActions } from "pinia"
 import { useUserStore } from "@/store/userStore"
 import UserForm from "@/components/UserForm.vue";
 
@@ -24,6 +25,9 @@ export default {
         user() {
             return this.getUserById(this.editUserId)
         }
+    },
+    methods: {
+        ...mapActions(useUserStore, ['editUserItem'])
     }
 }
 
