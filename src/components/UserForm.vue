@@ -26,6 +26,11 @@
 
 <script lang="js">
 export default {
+    props: {
+        user: {
+            type: Object
+        }
+    },
     data: () => ({
         formData: {
             id: "5",
@@ -36,11 +41,25 @@ export default {
             group: ""
         }
     }),
-    emits: ['add-new-user'],
+    emits: ['add-new-user', 'edit-user'],
     methods: {
         handleFormSubmit() {
-            this.$emit('add-new-user', this.formData)
+            if(this.user) {
+                this.$emit('edit-user', this.user.id, this.formData)
+            } else {
+                this.$emit('add-new-user', this.formData)
+            }
             this.$router.push("/")
+        }
+    },
+    created() {
+        if(this.user) {
+            this.formData.id = this.user.id
+            this.formData.name = this.user.name
+            this.formData.email = this.user.email
+            this.formData.mobile = this.user.mobile
+            this.formData.country = this.user.country
+            this.formData.group = this.user.group
         }
     }
 }
