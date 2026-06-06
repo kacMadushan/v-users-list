@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router"
 import Users from "@/views/Users/Users.vue"
 
 const router = createRouter({
