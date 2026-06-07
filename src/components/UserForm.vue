@@ -1,29 +1,29 @@
 <template>
     <form class="flex flex-col gap-y-2.5" @submit.prevent="handleFormSubmit">
         <div class="flex flex-col gap-y-1">
-            <label class="text-sm font-medium" for="name">Full Name</label>
+            <label class="text-sm" for="name">Full Name</label>
             <input 
-                class="border border-gray-300 rounded-md px-3 py-2.5 outline-0 text-sm font-medium" 
+                class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium" 
                 type="text" 
                 id="name" 
                 v-model="formData.name" 
             />
         </div>
         <div class="flex flex-col gap-y-1">
-            <label class="text-sm font-medium" for="email">Email Address</label>
-            <input class="border border-gray-300 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="email" v-model="formData.email"/>
+            <label class="text-sm" for="email">Email Address</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="email" v-model="formData.email"/>
         </div>
         <div class="flex flex-col gap-y-1">
-            <label class="text-sm font-medium" for="mobile">Mobile Number</label>
-            <input class="border border-gray-300 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="mobile" v-model="formData.mobile"/>
+            <label class="text-sm" for="mobile">Mobile Number</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="mobile" v-model="formData.mobile"/>
         </div>
         <div class="flex flex-col gap-y-1">
-            <label class="text-sm font-medium" for="country">Country</label>
-            <input class="border border-gray-300 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="country" v-model="formData.country"/>
+            <label class="text-sm" for="country">Country</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="country" v-model="formData.country"/>
         </div>
         <div class="flex flex-col gap-y-1">
-            <label class="text-sm font-medium" for="group">Group</label>
-            <input class="border border-gray-300 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="group" v-model="formData.group"/>
+            <label class="text-sm" for="group">Group</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="group" v-model="formData.group"/>
         </div>
         <button type="submit">Save User</button>
     </form>
