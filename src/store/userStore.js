@@ -40,6 +40,11 @@ export const useUserStore = defineStore("user", {
     getters: {
         getUserById: (state) => {
             return (profileId) => state.users.find((user) => user.id === profileId)
+        },
+        filteredUsers: (state) => {
+            return (query) => {
+                return state.users.filter(({ name }) => name.toLowerCase().includes(query.toLowerCase()))
+            }
         }
     },
     actions: {
