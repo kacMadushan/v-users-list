@@ -3,7 +3,7 @@
         <RouterLink to="/create">Create New</RouterLink>
         <h1>Users</h1>
         <SearchBar v-model:query="searchText"/>
-        <UserList :users="users"/>
+        <UserList :users="userList"/>
     </div>
 </template>
 
@@ -23,7 +23,11 @@ export default {
         searchText: ""
     }),
     computed: {
-        ...mapState(useUserStore, ["users"]),
+        ...mapState(useUserStore, ["users", "filteredUsers"]),
+
+        userList() {
+            return this.filteredUsers(this.searchText)
+        }
     }
     
 }
