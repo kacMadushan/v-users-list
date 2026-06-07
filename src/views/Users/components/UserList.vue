@@ -1,5 +1,5 @@
 <template>
-    <ul>
+    <ul class="flex flex-col">
         <UserListItem v-for="user in users" :key="user.id" :user="user"/>
     </ul>
 </template>
