@@ -4,17 +4,19 @@
             <h2 class="text-black font-semibold text-xl">All Users</h2>
             <RouterLink to="/create" class="border border-gray-200 px-3 capitalize py-2 rounded-md font-semibold text-sm text-black">Create New</RouterLink>
         </div>
-        <SearchBar v-model:query="searchText"/>
-        <ul class="flex items-center justify-center gap-x-4">
-            <li v-for="item in groupList" :key="item">
-                <button 
-                    class="border border-gray-200 text-sm font-medium cursor-pointer rounded-md px-3 py-1.5"
-                    @click="handleSelectedGroup(item)"
-                >
-                {{ item }}
-                </button>
-            </li>
-        </ul>
+        <div class="flex items-center gap-x-4">
+            <SearchBar v-model:query="searchText"/>
+            <ul class="flex items-center gap-x-2">
+                <li v-for="item in groupList" :key="item">
+                    <button 
+                        class="border border-gray-200 text-sm font-medium cursor-pointer rounded-md px-3 py-1.5"
+                        @click="handleSelectedGroup(item)"
+                    >
+                    {{ item }}
+                    </button>
+                </li>
+            </ul>
+        </div>
         <UserList :users="userList"/>
     </div>
 </template>
@@ -34,7 +36,7 @@ export default {
     data: () => ({
         searchText: "",
         selectedGroup: "",
-        groupList: ["All", "Office", "Family", "Friend"],
+        groupList: ["Office", "Family", "Friend"],
     }),
     computed: {
         ...mapState(useUserStore, ["users", "filteredUsers"]),
