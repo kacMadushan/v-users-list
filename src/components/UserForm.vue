@@ -1,24 +1,29 @@
 <template>
-    <form @submit.prevent="handleFormSubmit">
-        <div>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" v-model="formData.name"/>
+    <form class="flex flex-col gap-y-2.5" @submit.prevent="handleFormSubmit">
+        <div class="flex flex-col gap-y-1">
+            <label class="text-sm" for="name">Full Name</label>
+            <input 
+                class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium" 
+                type="text" 
+                id="name" 
+                v-model="formData.name" 
+            />
         </div>
-        <div>
-            <label for="email">Email Address</label>
-            <input type="text" id="email" v-model="formData.email"/>
+        <div class="flex flex-col gap-y-1">
+            <label class="text-sm" for="email">Email Address</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="email" v-model="formData.email"/>
         </div>
-        <div>
-            <label for="mobile">Mobile Number</label>
-            <input type="text" id="mobile" v-model="formData.mobile"/>
+        <div class="flex flex-col gap-y-1">
+            <label class="text-sm" for="mobile">Mobile Number</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="mobile" v-model="formData.mobile"/>
         </div>
-        <div>
-            <label for="country">Country</label>
-            <input type="text" id="country" v-model="formData.country"/>
+        <div class="flex flex-col gap-y-1">
+            <label class="text-sm" for="country">Country</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="country" v-model="formData.country"/>
         </div>
-        <div>
-            <label for="group">Group</label>
-            <input type="text" id="group" v-model="formData.group"/>
+        <div class="flex flex-col gap-y-1">
+            <label class="text-sm" for="group">Group</label>
+            <input class="border border-gray-200 rounded-md px-3 py-2.5 outline-0 text-sm font-medium"  type="text" id="group" v-model="formData.group"/>
         </div>
         <button type="submit">Save User</button>
     </form>

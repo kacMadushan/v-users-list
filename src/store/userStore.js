@@ -42,8 +42,13 @@ export const useUserStore = defineStore("user", {
             return (profileId) => state.users.find((user) => user.id === profileId)
         },
         filteredUsers: (state) => {
-            return (query) => {
-                return state.users.filter(({ name }) => name.toLowerCase().includes(query.toLowerCase()))
+            return (query, groupName) => {
+                return state.users.filter((item) => {
+                    const matchName = item.name.toLowerCase().includes(query.toLowerCase());
+                    const matchGroup = groupName ? groupName === item.group : item 
+
+                    return matchName && matchGroup
+                })
             }
         }
     },
